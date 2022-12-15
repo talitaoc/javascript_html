@@ -27,19 +27,26 @@
         var segredos = [];
 
         var numero = 1;
+        var achou = false;
 
-        while(numero <= quantidade){
+        for (var posicao=0; posicao < segredos.length; posicao++){
 
-            var numeroAleatorio = sorteia();
-
-            if(achou == false){
-
+            if(segredos[posicao] == numeroAleatorio){
+                achou = true;
+                break;
                 segredos.push(numeroAleatorio);
-            }
-            
-            numero++;
+            } 
         }
+
+        if(achou == false){
+            segredos.push(numeroAleatorio);
+        }
+
+        numero++;
+
+        return segredos;
     }
+
 
     var segredos = sorteiaNumeros(3);
     
